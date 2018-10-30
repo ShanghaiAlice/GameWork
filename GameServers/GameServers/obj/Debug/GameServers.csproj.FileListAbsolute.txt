@@ -1,0 +1,12 @@
+C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\GameServers.exe.config
+C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\GameServers.exe
+C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\GameServers.pdb
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.csprojResolveAssemblyReference.cache
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.Properties.Resources.resources
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.csproj.GenerateResource.cache
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.csproj.CoreCompileInputs.cache
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.exe
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.pdb
+C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\Newtonsoft.Json.dll
+C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\Newtonsoft.Json.xml
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.csproj.CopyComplete
