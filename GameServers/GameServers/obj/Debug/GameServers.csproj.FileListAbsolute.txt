@@ -10,3 +10,4 @@ C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.pdb
 C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ychi\source\GameWork\GameServers\GameServers\bin\Debug\Newtonsoft.Json.xml
 C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.csproj.CopyComplete
+C:\Users\ychi\source\GameWork\GameServers\GameServers\obj\Debug\GameServers.Form1.resources
