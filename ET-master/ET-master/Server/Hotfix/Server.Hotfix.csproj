@@ -28,6 +28,13 @@
     <ProjectReference Include="..\Model\Server.Model.csproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="hzy\Factory\" />
+    <Folder Include="hzy\Handler\Gate\" />
+    <Folder Include="hzy\Handler\Map\" />
+    <Folder Include="hzy\Handler\Match\" />
+    <Folder Include="hzy\Handler\Realm\" />
+    <Folder Include="hzy\Helper\" />
+    <Folder Include="hzy\System\" />
     <Folder Include="Module\Http\" />
   </ItemGroup>
 </Project>

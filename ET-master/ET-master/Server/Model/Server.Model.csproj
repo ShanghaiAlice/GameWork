@@ -342,6 +342,9 @@
     <Folder Include="Base\RecyclableMemoryStream\" />
     <Folder Include="Base\Base\" />
     <Folder Include="Component\Config\" />
+    <Folder Include="hzy\Component\" />
+    <Folder Include="hzy\Entity\Gate\" />
+    <Folder Include="hzy\Entity\Match\" />
     <Folder Include="Module\Message\Network\KCP\" />
     <Folder Include="Module\Message\Network\TCP\" />
     <Folder Include="Module\Message\MessagePool\" />
