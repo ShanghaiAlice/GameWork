@@ -19,13 +19,16 @@ namespace ETHotfix
 	{
 		private GameObject account;
 		private GameObject loginBtn;
+        private GameObject password;
 
-		public void Awake()
+
+        public void Awake()
 		{
 			ReferenceCollector rc = this.GetParent<UI>().GameObject.GetComponent<ReferenceCollector>();
 			loginBtn = rc.Get<GameObject>("LoginBtn");
 			loginBtn.GetComponent<Button>().onClick.Add(OnLogin);
 			this.account = rc.Get<GameObject>("Account");
+            this.password = rc.Get<GameObject>("Password");
 		}
 
 		public void OnLogin()
@@ -38,13 +41,27 @@ namespace ETHotfix
 			try
 			{
 				string text = this.account.GetComponent<InputField>().text;
+                string passwdText = this.password.GetComponent<InputField>().text;
 
 				// 创建一个ETModel层的Session
 				ETModel.Session session = ETModel.Game.Scene.GetComponent<NetOuterComponent>().Create(GlobalConfigComponent.Instance.GlobalProto.Address);
 				
 				// 创建一个ETHotfix层的Session, ETHotfix的Session会通过ETModel层的Session发送消息
 				Session realmSession = ComponentFactory.Create<Session, ETModel.Session>(session);
-				R2C_Login r2CLogin = (R2C_Login) await realmSession.Call(new C2R_Login() { Account = text, Password = "111111" });
+                R2C_Login r2CLogin = new R2C_Login();
+                try
+                {
+                    r2CLogin = (R2C_Login)await realmSession.Call(new C2R_Login() { Account = text, Password = passwdText });
+                }
+                catch (RpcException e)
+                {
+                    if (e.Error == ErrorCode.ERR_AccountOrPasswordError)
+                    {
+                        Log.Debug("账号或密码错误");
+                        return;
+                    }
+                }
+
 				realmSession.Dispose();
 
 				// 创建一个ETModel层的Session,并且保存到ETModel.SessionComponent中
