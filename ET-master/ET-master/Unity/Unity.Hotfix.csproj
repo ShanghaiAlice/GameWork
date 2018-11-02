@@ -122,6 +122,9 @@
     <Compile Include="Assets\Hotfix\UI\UILogin\Component\UILoginComponent.cs" />
     <Compile Include="Assets\Hotfix\UI\UILogin\Event\InitSceneStart_CreateLoginUI.cs" />
     <Compile Include="Assets\Hotfix\UI\UILogin\Factory\UILoginFactory.cs" />
+    <Compile Include="Assets\Hotfix\UI\UIRegister\Component\UIRegisterComponent.cs" />
+    <Compile Include="Assets\Hotfix\UI\UIRegister\Event\InitSceneStart_CreateRegisterUI.cs" />
+    <Compile Include="Assets\Hotfix\UI\UIRegister\Factory\UIRegisterFactory.cs" />
     <None Include="Assets\Hotfix\Unity.Hotfix.asmdef" />
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/Editor/2018.3.0b7/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

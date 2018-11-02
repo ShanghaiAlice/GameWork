@@ -81,7 +81,8 @@ namespace ETHotfix
 				playerComponent.MyPlayer = player;
 
 				Game.Scene.GetComponent<UIComponent>().Create(UIType.UILobby);
-				Game.Scene.GetComponent<UIComponent>().Remove(UIType.UILogin);
+                //		Game.Scene.GetComponent<UIComponent>().Remove(UIType.UILogin);
+                Game.Scene.GetComponent<UIComponent>().Remove(UIType.UIRegister);
 
 				// 测试消息有成员是class类型
 				G2C_PlayerInfo g2CPlayerInfo = (G2C_PlayerInfo) await SessionComponent.Instance.Session.Call(new C2G_PlayerInfo());

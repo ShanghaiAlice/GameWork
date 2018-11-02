@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace ETHotfix
 {
-    [UIFactory(UIType.UILogin)]
+   // [UIFactory(UIType.UILogin)]
+   [UIFactory(UIType.UIRegister)]
     public class UILoginFactory : IUIFactory
     {
         public UI Create(Scene scene, string type, GameObject gameObject)

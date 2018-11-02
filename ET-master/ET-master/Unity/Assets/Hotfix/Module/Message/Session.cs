@@ -93,7 +93,7 @@ namespace ETHotfix
 			this.Send(flag, opcode, message);
 		}
 
-		public void Send(byte flag, ushort opcode, IMessage message)
+        public void Send(byte flag, ushort opcode, IMessage message)
 		{
 			if (OpcodeHelper.IsNeedDebugLogMessage(opcode))
 			{
