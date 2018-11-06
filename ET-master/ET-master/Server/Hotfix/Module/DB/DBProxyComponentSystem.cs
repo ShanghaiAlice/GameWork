@@ -32,7 +32,7 @@ namespace ETHotfix
 		public static async ETTask Save(this DBProxyComponent self, ComponentWithId component)
 		{
 			Session session = Game.Scene.GetComponent<NetInnerComponent>().Get(self.dbAddress);
-			await session.Call(new DBSaveRequest { Component = component });
+			await session.Call(new DBSaveRequest { Component = component , CollectionName = "UserInfo"});
 		}
 
 		public static async ETTask SaveBatch(this DBProxyComponent self, List<ComponentWithId> components)

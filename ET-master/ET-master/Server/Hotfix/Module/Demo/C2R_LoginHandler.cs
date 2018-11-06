@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net;
 using ETModel;
+using System.Collections.Generic;
 
 namespace ETHotfix
 {
@@ -17,11 +18,30 @@ namespace ETHotfix
 			R2C_Login response = new R2C_Login();
 			try
             {
-                if (message.Account != "hzy" || message.Password != "123")
+                //if (message.Account != "hzy" || message.Password != "123")
+                //{
+                //    response.Error = ErrorCode.ERR_AccountOrPasswordError;
+                //    reply(response);
+                //    return;
+                //}
+                DBProxyComponent dBProxy = Game.Scene.GetComponent<DBProxyComponent>();
+                UserInfo newUserInfo = ComponentFactory.Create<UserInfo>();
+                newUserInfo.Account = message.Account;
+                newUserInfo.PassWord = message.Password;
+                await dBProxy.Save(newUserInfo);
+                try
                 {
-                    response.Error = ErrorCode.ERR_AccountOrPasswordError;
-                    reply(response);
-                    return;
+                    List<ComponentWithId> users = await dBProxy.Query<UserInfo>( t =>t.Account == message.Account);
+                    if (users.Count > 0)
+                    {
+                        UserInfo user = await dBProxy.Query<UserInfo>(users[0].Id);
+                        Log.Error("user的内容:" + JsonHelper.ToJson(user));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Log.Error("查库错误");
+                    throw;
                 }
 
                 // 随机分配一个Gate
