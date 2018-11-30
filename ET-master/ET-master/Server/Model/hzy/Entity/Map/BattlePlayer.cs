@@ -103,13 +103,13 @@ namespace ETModel
         /// </summary>
         public int crd;
         /// <summary>
-        /// 暴击率
-        /// </summary>
-        public int crdPer;
-        /// <summary>
         /// 护盾
         /// </summary>
         public int shield;
+        /// <summary>
+        /// 是否为boss
+        /// </summary>
+        public bool isBoss;
     }
 
 }

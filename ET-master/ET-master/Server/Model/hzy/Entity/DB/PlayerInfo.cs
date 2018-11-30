@@ -25,10 +25,6 @@ namespace ETModel
         /// </summary>
         public int exp;
         /// <summary>
-        /// 队伍ID（不在队伍则为-1）
-        /// </summary>
-        public int teamId;
-        /// <summary>
         /// 技能
         /// </summary>
         public List<Skill> skill;
