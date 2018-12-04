@@ -94,7 +94,9 @@ namespace ETModel
 	{
 		public int RpcId { get; set; }
 
-		public string CollectionName { get; set; }
+        public bool NeedCache { get; set; }
+
+        public string CollectionName { get; set; }
 
 		public ComponentWithId Component { get; set; }
 
@@ -120,7 +122,9 @@ namespace ETModel
 
 		public List<ComponentWithId> Components = new List<ComponentWithId>();
 
-	}
+        public bool NeedCache { get; set; }
+
+    }
 
 	[Message(InnerOpcode.DBSaveResponse)]
 	public partial class DBSaveResponse: IResponse
@@ -142,7 +146,9 @@ namespace ETModel
 
 		public string CollectionName { get; set; }
 
-	}
+        public bool NeedCache { get; set; }
+
+    }
 
 	[Message(InnerOpcode.DBQueryResponse)]
 	public partial class DBQueryResponse: IResponse
@@ -162,13 +168,58 @@ namespace ETModel
 	{
 		public int RpcId { get; set; }
 
-		public string CollectionName { get; set; }
+        public bool NeedCache { get; set; }
+
+        public string CollectionName { get; set; }
 
 		public List<long> IdList = new List<long>();
 
 	}
 
-	[Message(InnerOpcode.DBQueryBatchResponse)]
+    [Message(InnerOpcode.G2R_PlayerOffline_Req)]
+    public partial class G2R_PlayerOffline_Req : IRequest
+    {
+        public int RpcId { get; set; }
+
+        public long UserID { get; set; }
+
+    }
+
+    [Message(InnerOpcode.G2R_PlayerOnline_Req)]
+    public partial class G2R_PlayerOnline_Req : IRequest
+    {
+        public int RpcId { get; set; }
+
+        public long UserID { get; set; }
+
+        public int GateAppID { get; set; }
+
+    }
+
+    [Message(InnerOpcode.R2G_PlayerOnline_Ack)]
+    public partial class R2G_PlayerOnline_Ack : IResponse
+    {
+        public int RpcId { get; set; }
+
+        public int Error { get; set; }
+
+        public string Message { get; set; }
+
+    }
+
+
+    [Message(InnerOpcode.R2G_PlayerOffline_Ack)]
+    public partial class R2G_PlayerOffline_Ack : IResponse
+    {
+        public int RpcId { get; set; }
+
+        public int Error { get; set; }
+
+        public string Message { get; set; }
+
+    }
+
+    [Message(InnerOpcode.DBQueryBatchResponse)]
 	public partial class DBQueryBatchResponse: IResponse
 	{
 		public int RpcId { get; set; }
@@ -384,6 +435,19 @@ namespace ETModel
         public int RpcId { get; set; }
 
         public long UserID { get; set; }
+
+    }
+
+    [Message(InnerOpcode.G2R_GetLoginKey_Ack)]
+    public partial class G2R_GetLoginKey_Ack : IResponse
+    {
+        public int RpcId { get; set; }
+
+        public int Error { get; set; }
+
+        public string Message { get; set; }
+
+        public long Key { get; set; }
 
     }
 

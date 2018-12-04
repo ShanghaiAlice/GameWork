@@ -43,8 +43,9 @@ namespace ETModel
 		public const int ERR_WebsocketRecvError = 203006;
 
         public const int ERR_LoginError = 210000;
+        public const int ERR_AccountAlreadyRegister = 210001;
 
-		public static bool IsRpcNeedThrowException(int error)
+        public static bool IsRpcNeedThrowException(int error)
 		{
 			if (error == 0)
 			{

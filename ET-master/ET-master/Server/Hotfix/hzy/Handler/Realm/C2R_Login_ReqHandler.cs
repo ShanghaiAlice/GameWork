@@ -27,7 +27,24 @@ namespace ETHotfix
                 AccountInfo account = result[0] as AccountInfo;
                 Log.Info($"登陆成功{MongoHelper.ToJson(account)}");
 
+                account.lastLogin = DateTime.Now;
+
                 await RealmHelper.KickOutPlayer(account.Id);
+
+                ///随机匹配网关服务器
+                StartConfig gateConfig = Game.Scene.GetComponent<RealmGateAddressComponent>().GetAddress();
+                Session gateSession = Game.Scene.GetComponent<NetInnerComponent>().Get(gateConfig.GetComponent<InnerConfig>().IPEndPoint);
+
+                G2R_GetLoginKey_Ack g2R_GetLoginKey_Ack = await gateSession.Call(new R2G_PlayerKickOut_Req { UserID = account.Id }) as G2R_GetLoginKey_Ack;
+                response.Key = g2R_GetLoginKey_Ack.Key;
+                response.Address = gateConfig.GetComponent<OuterConfig>().Address2;
+                await dBProxy.Save(account);
+                reply?.Invoke(response);
             }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

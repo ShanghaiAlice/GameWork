@@ -36,6 +36,11 @@ namespace ETHotfix
     [Message(HotfixOpcode.R2C_Login_Ack)]
     public partial class R2C_Login_Ack : IResponse { }
 
+    [Message(HotfixOpcode.C2R_Register_Req)]
+    public partial class C2R_Register_Req : IRequest { }
+    [Message(HotfixOpcode.R2C_Register_Ack)]
+    public partial class R2C_Register_Ack : IResponse { }
+
 }
 namespace ETHotfix
 {
@@ -53,5 +58,7 @@ namespace ETHotfix
         public const ushort G2C_PlayerInfo = 10010;
         public const ushort C2R_Login_Req = 10011;
         public const ushort R2C_Login_Ack = 10012;
+        public const ushort C2R_Register_Req = 10013;
+        public const ushort R2C_Register_Ack = 10014;
     }
 }

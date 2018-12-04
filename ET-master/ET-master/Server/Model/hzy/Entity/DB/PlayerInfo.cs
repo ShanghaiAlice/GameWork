@@ -6,7 +6,7 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace ETModel
 {
     [BsonIgnoreExtraElements]
-   public class PlayerInfo:Entity
+   public class PlayerInfos:Entity
     {
         /// <summary>
         /// 玩家Id
